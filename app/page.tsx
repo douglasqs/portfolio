@@ -119,6 +119,7 @@ const content = {
     whatsapp: "WhatsApp",
     linkedin: "LinkedIn",
     github: "GitHub",
+    backToTop: "Voltar ao topo",
     footer: "Projetado e desenvolvido para conectar boas oportunidades a problemas que valem a pena resolver.",
   },
   en: {
@@ -162,7 +163,7 @@ const content = {
     contactKicker: "Let’s build something useful",
     contactTitle: <>I look for challenges where technology must <em>work in the real world.</em></>,
     contactText: "I’m open to opportunities in software development, integrations, applied AI, advanced technical support and adjacent areas. If my background fits your team, let’s talk.",
-    emailMe: "Send an email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub",
+    emailMe: "Send an email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", backToTop: "Back to top",
     footer: "Designed and developed to connect good opportunities with problems worth solving.",
   },
   es: {
@@ -200,7 +201,7 @@ const content = {
     contactKicker: "Construyamos algo útil",
     contactTitle: <>Busco desafíos donde la tecnología debe <em>funcionar de verdad.</em></>,
     contactText: "Estoy abierto a oportunidades en desarrollo, integraciones, IA aplicada, soporte técnico avanzado y áreas relacionadas. Si mi perfil encaja con tu equipo, hablemos.",
-    emailMe: "Enviar email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub",
+    emailMe: "Enviar email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", backToTop: "Volver arriba",
     footer: "Diseñado y desarrollado para conectar buenas oportunidades con problemas que vale la pena resolver.",
   },
 } as const;
@@ -223,6 +224,12 @@ export default function Home() {
   function changeLanguage(next: Language) {
     setLanguage(next);
     window.localStorage.setItem("portfolio-language", next);
+  }
+
+  function scrollToTop() {
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    window.scrollTo({ top: 0, behavior });
   }
 
   return (
@@ -282,7 +289,7 @@ export default function Home() {
       </section>
 
       <section className="contact" id="contact"><div className="contact-grid" aria-hidden="true"/><p className="kicker">{t.contactKicker}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="contact-actions"><a className="button light" href={profileLinks.email}>{t.emailMe}<span>↗</span></a><a className="text-link" href={profileLinks.whatsapp} target="_blank" rel="noreferrer">{t.whatsapp}<span>↗</span></a><a className="text-link" href={profileLinks.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>↗</span></a><a className="text-link" href={profileLinks.github} target="_blank" rel="noreferrer">{t.github}<span>↗</span></a></div></section>
-      <footer><div className="brand"><span>DQ</span><b>Douglas Soares</b></div><p>{t.footer}</p><a href="#top">↑ TOP</a></footer>
+      <footer><div className="brand"><span>DQ</span><b>Douglas Soares</b></div><p>{t.footer}</p><button className="back-to-top" type="button" onClick={scrollToTop} aria-label={t.backToTop}>↑ TOP</button></footer>
     </main>
   );
 }
