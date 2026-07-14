@@ -9,6 +9,7 @@ type Language = "pt" | "en" | "es";
 const profileLinks = {
   github: "https://github.com/douglasqs",
   linkedin: "https://www.linkedin.com/in/douglasqs/",
+  whatsapp: "https://wa.me/5548996940124",
   email: "mailto:douglasqsoares@hotmail.com",
 };
 
@@ -115,6 +116,7 @@ const content = {
     contactTitle: <>Procuro desafios onde tecnologia precisa <em>funcionar de verdade.</em></>,
     contactText: "Estou aberto a oportunidades em desenvolvimento, integrações, IA aplicada, suporte técnico avançado e áreas próximas. Se meu perfil fizer sentido para o seu time, vamos conversar.",
     emailMe: "Enviar e-mail",
+    whatsapp: "WhatsApp",
     linkedin: "LinkedIn",
     github: "GitHub",
     footer: "Projetado e desenvolvido para conectar boas oportunidades a problemas que valem a pena resolver.",
@@ -160,7 +162,7 @@ const content = {
     contactKicker: "Let’s build something useful",
     contactTitle: <>I look for challenges where technology must <em>work in the real world.</em></>,
     contactText: "I’m open to opportunities in software development, integrations, applied AI, advanced technical support and adjacent areas. If my background fits your team, let’s talk.",
-    emailMe: "Send an email", linkedin: "LinkedIn", github: "GitHub",
+    emailMe: "Send an email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub",
     footer: "Designed and developed to connect good opportunities with problems worth solving.",
   },
   es: {
@@ -198,7 +200,7 @@ const content = {
     contactKicker: "Construyamos algo útil",
     contactTitle: <>Busco desafíos donde la tecnología debe <em>funcionar de verdad.</em></>,
     contactText: "Estoy abierto a oportunidades en desarrollo, integraciones, IA aplicada, soporte técnico avanzado y áreas relacionadas. Si mi perfil encaja con tu equipo, hablemos.",
-    emailMe: "Enviar email", linkedin: "LinkedIn", github: "GitHub",
+    emailMe: "Enviar email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub",
     footer: "Diseñado y desarrollado para conectar buenas oportunidades con problemas que vale la pena resolver.",
   },
 } as const;
@@ -279,7 +281,7 @@ export default function Home() {
         </article>)}</div>
       </section>
 
-      <section className="contact" id="contact"><div className="contact-grid" aria-hidden="true"/><p className="kicker">{t.contactKicker}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="contact-actions"><a className="button light" href={profileLinks.email}>{t.emailMe}<span>↗</span></a><a className="text-link" href={profileLinks.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>↗</span></a><a className="text-link" href={profileLinks.github} target="_blank" rel="noreferrer">{t.github}<span>↗</span></a></div></section>
+      <section className="contact" id="contact"><div className="contact-grid" aria-hidden="true"/><p className="kicker">{t.contactKicker}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="contact-actions"><a className="button light" href={profileLinks.email}>{t.emailMe}<span>↗</span></a><a className="text-link" href={profileLinks.whatsapp} target="_blank" rel="noreferrer">{t.whatsapp}<span>↗</span></a><a className="text-link" href={profileLinks.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>↗</span></a><a className="text-link" href={profileLinks.github} target="_blank" rel="noreferrer">{t.github}<span>↗</span></a></div></section>
       <footer><div className="brand"><span>DQ</span><b>Douglas Soares</b></div><p>{t.footer}</p><a href="#top">↑ TOP</a></footer>
     </main>
   );
