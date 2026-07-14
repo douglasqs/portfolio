@@ -24,3 +24,9 @@ test("includes share and crawler assets", async () => {
     access(new URL("../dist/client/sitemap.xml", import.meta.url)),
   ]);
 });
+
+test("keeps the mobile introduction before the profile photo", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.hero-content \{ order: 1; \}/);
+  assert.match(css, /\.hero-side \{ order: 2;/);
+});
