@@ -226,19 +226,24 @@ export default function Home() {
     window.localStorage.setItem("portfolio-language", next);
   }
 
-  function scrollToTop() {
+  function navigateToSection(id: string) {
+    const target = document.getElementById(id);
+    if (!target) return;
     window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-    window.scrollTo({ top: 0, behavior });
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+  }
+
+  function scrollToTop() {
+    navigateToSection("top");
   }
 
   return (
     <main>
-      <a className="skip-link" href="#content">Skip to content</a>
+      <a className="skip-link" href="#content" onClick={(event) => { event.preventDefault(); navigateToSection("content"); }}>Skip to content</a>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Douglas Soares — início"><span>DQ</span><b>Douglas Soares</b></a>
+        <a className="brand" href="#top" aria-label="Douglas Soares — início" onClick={(event) => { event.preventDefault(); scrollToTop(); }}><span>DQ</span><b>Douglas Soares</b></a>
         <nav aria-label="Navegação principal">
-          <a href="#about">{t.nav.about}</a><a href="#experience">{t.nav.experience}</a><a href="#work">{t.nav.work}</a><a href="#contact">{t.nav.contact}</a>
+          <a href="#about" onClick={(event) => { event.preventDefault(); navigateToSection("about"); }}>{t.nav.about}</a><a href="#experience" onClick={(event) => { event.preventDefault(); navigateToSection("experience"); }}>{t.nav.experience}</a><a href="#work" onClick={(event) => { event.preventDefault(); navigateToSection("work"); }}>{t.nav.work}</a><a href="#contact" onClick={(event) => { event.preventDefault(); navigateToSection("contact"); }}>{t.nav.contact}</a>
         </nav>
         <div className="language-switch" aria-label="Selecionar idioma">
           {(["pt", "en", "es"] as Language[]).map((item) => <button key={item} className={language === item ? "active" : ""} onClick={() => changeLanguage(item)} aria-pressed={language === item}>{item === "pt" ? "PT" : item.toUpperCase()}</button>)}
@@ -252,7 +257,7 @@ export default function Home() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.heroTitle}</h1>
           <p className="hero-body">{t.heroBody}</p>
-          <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.resume} download="Douglas-Soares-Curriculo.pdf">{t.downloadResume}<span>↓</span></a><a className="button secondary" href="#contact">{t.talk}<span>↓</span></a></div>
+          <div className="hero-actions"><a className="button primary" href="#work" onClick={(event) => { event.preventDefault(); navigateToSection("work"); }}>{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.resume} download="Douglas-Soares-Curriculo.pdf">{t.downloadResume}<span>↓</span></a><a className="button secondary" href="#contact" onClick={(event) => { event.preventDefault(); navigateToSection("contact"); }}>{t.talk}<span>↓</span></a></div>
           <div className="hero-foot"><span className="world-mark" aria-hidden="true">🌐</span><span>{t.remoteAvailability}</span></div>
         </div>
         <div className="hero-side">

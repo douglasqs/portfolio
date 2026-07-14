@@ -43,3 +43,14 @@ test("uses the requested mobile content order", async () => {
   assert.match(css, /\.project-content h3\{order:1;/);
   assert.match(css, /\.project-type\{order:3;/);
 });
+
+test("internal navigation avoids blocking hash animations", async () => {
+  const [page, css] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+  assert.match(page, /function navigateToSection/);
+  assert.match(page, /navigateToSection\("work"\)/);
+  assert.match(page, /navigateToSection\("contact"\)/);
+  assert.doesNotMatch(css, /html \{ scroll-behavior: smooth;/);
+});
