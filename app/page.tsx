@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import { useEffect, useState } from "react";
 
 type Language = "pt" | "en" | "es";
@@ -16,7 +18,7 @@ const content = {
     nav: { about: "Sobre", work: "Projetos", experience: "Experiência", contact: "Contato" },
     availability: "Aberto a novas oportunidades",
     eyebrow: "Full-stack · IA · Integrações",
-    heroTitle: <>Software que conecta <em>ideias, dados e o mundo real.</em></>,
+    heroTitle: <>Conecto <em>ideias, dados e o mundo real.</em></>,
     heroBody: "Desenvolvedor full-stack e especialista em integrações, com experiência em IA, computer vision, APIs, redes e sistemas de segurança eletrônica.",
     seeWork: "Ver projetos",
     talk: "Vamos conversar",
@@ -134,7 +136,7 @@ const content = {
     nav: { about: "About", work: "Projects", experience: "Experience", contact: "Contact" },
     availability: "Open to new opportunities",
     eyebrow: "Full-stack · AI · Integrations",
-    heroTitle: <>Software that connects <em>ideas, data and the real world.</em></>,
+    heroTitle: <>I connect <em>ideas, data and the real world.</em></>,
     heroBody: "Full-stack developer and integration specialist with experience in AI, computer vision, APIs, networking and electronic security systems.",
     seeWork: "View projects",
     talk: "Let’s talk",
@@ -180,7 +182,7 @@ const content = {
     nav: { about: "Sobre mí", work: "Proyectos", experience: "Experiencia", contact: "Contacto" },
     availability: "Abierto a nuevas oportunidades",
     eyebrow: "Full-stack · IA · Integraciones",
-    heroTitle: <>Software que conecta <em>ideas, datos y el mundo real.</em></>,
+    heroTitle: <>Conecto <em>ideas, datos y el mundo real.</em></>,
     heroBody: "Desarrollador full-stack y especialista en integraciones, con experiencia en IA, visión artificial, APIs, redes y sistemas de seguridad electrónica.",
     seeWork: "Ver proyectos", talk: "Hablemos", location: "Florianópolis, Brasil",
     metrics: [["+25%", "de precisión en reconocimiento facial"], ["9+", "años en tecnología y soporte"], ["3", "idiomas para colaborar"]],
@@ -218,7 +220,7 @@ const content = {
 } as const;
 
 function ProjectVisual({ type }: { type: string }) {
-  if (type === "platform") return <div className="visual platform-visual" aria-hidden="true"><span className="node app-node">APP</span><span className="line line-one" /><span className="node cloud-node">CLOUD</span><span className="line line-two" /><span className="node web-node">WEB</span><span className="line line-three" /><span className="node device-node">DEVICES</span><i className="signal signal-one" /><i className="signal signal-two" /></div>;
+  if (type === "platform") return <div className="visual product-showcase" aria-hidden="true"><div className="dashboard-shot"><img src="images/platform-dashboard.png" alt="" loading="lazy" /></div><div className="mobile-shots"><img className="mobile-shot mobile-login" src="images/mobile-login-light.png" alt="" loading="lazy" /><img className="mobile-shot mobile-access" src="images/mobile-access-light.png" alt="" loading="lazy" /><img className="mobile-shot mobile-home" src="images/mobile-home-dark.png" alt="" loading="lazy" /></div><span className="showcase-label">MOBILE + WEB + CLOUD</span></div>;
   if (type === "face") return <div className="visual face-visual" aria-hidden="true"><div className="face-frame"><span className="corner c1"/><span className="corner c2"/><span className="corner c3"/><span className="corner c4"/><div className="face-shape"><i/><b/></div></div><div className="score"><strong>+25%</strong><span>ACCURACY</span></div></div>;
   if (type === "license") return <div className="visual license-visual" aria-hidden="true"><div className="api-card"><span>LICENSE API</span><b>VALID</b><i>•••• · 7F2A</i></div><div className="license-row"><span>AUTH</span><span>CRM</span><span>BILLING</span></div></div>;
   return <div className="visual lpr-visual" aria-hidden="true"><div className="plate"><span>BRASIL</span><strong>ABC 2D34</strong></div><div className="event-stream"><i/><span>event.received</span><b>200 OK</b></div><div className="event-stream muted"><i/><span>image.saved</span><b>12:48:03</b></div></div>;
@@ -243,7 +245,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Douglas Soares — início"><span>DQ</span><b>Douglas Soares</b></a>
         <nav aria-label="Navegação principal">
-          <a href="#about">{t.nav.about}</a><a href="#work">{t.nav.work}</a><a href="#experience">{t.nav.experience}</a><a href="#contact">{t.nav.contact}</a>
+          <a href="#about">{t.nav.about}</a><a href="#experience">{t.nav.experience}</a><a href="#work">{t.nav.work}</a><a href="#contact">{t.nav.contact}</a>
         </nav>
         <div className="language-switch" aria-label="Selecionar idioma">
           {(["pt", "en", "es"] as Language[]).map((item) => <button key={item} className={language === item ? "active" : ""} onClick={() => changeLanguage(item)} aria-pressed={language === item}>{item === "pt" ? "PT" : item.toUpperCase()}</button>)}
@@ -261,11 +263,14 @@ export default function Home() {
           <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.email}>{t.talk}<span>↗</span></a></div>
           <div className="hero-foot"><span>{t.location}</span><span className="foot-line"/><a href={profileLinks.github} target="_blank" rel="noreferrer">github.com/douglasqs ↗</a></div>
         </div>
-        <aside className="hero-console" aria-label="Resumo técnico">
-          <div className="console-bar"><span/><span/><span/><b>douglas.profile</b></div>
-          <div className="console-body"><p><i>01</i><span className="code-blue">const</span> developer = {'{'}</p><p><i>02</i>&nbsp;&nbsp;focus: <span className="code-green">&quot;real-world systems&quot;</span>,</p><p><i>03</i>&nbsp;&nbsp;stack: [<span className="code-green">&quot;software&quot;</span>, <span className="code-green">&quot;AI&quot;</span>],</p><p><i>04</i>&nbsp;&nbsp;connects: [<span className="code-green">&quot;APIs&quot;</span>, <span className="code-green">&quot;hardware&quot;</span>],</p><p><i>05</i>&nbsp;&nbsp;mindset: <span className="code-green">&quot;solve → validate → improve&quot;</span></p><p><i>06</i>{'}'};</p></div>
-          <div className="console-status"><i/>SYSTEMS ONLINE <span>FLN · BR</span></div>
-        </aside>
+        <div className="hero-side">
+          <div className="profile-photo"><span className="photo-ring" aria-hidden="true"/><img src="images/douglas-soares.jpeg" alt="Douglas Soares" fetchPriority="high" /></div>
+          <aside className="hero-console" aria-label="Resumo técnico">
+            <div className="console-bar"><span/><span/><span/><b>douglas.profile</b></div>
+            <div className="console-body"><p><i>01</i><span className="code-blue">const</span> developer = {'{'}</p><p><i>02</i>&nbsp;&nbsp;focus: <span className="code-green">&quot;real-world systems&quot;</span>,</p><p><i>03</i>&nbsp;&nbsp;stack: [<span className="code-green">&quot;software&quot;</span>, <span className="code-green">&quot;AI&quot;</span>],</p><p><i>04</i>&nbsp;&nbsp;connects: [<span className="code-green">&quot;APIs&quot;</span>, <span className="code-green">&quot;hardware&quot;</span>],</p><p><i>05</i>&nbsp;&nbsp;mindset: <span className="code-green">&quot;solve → validate → improve&quot;</span></p><p><i>06</i>{'}'};</p></div>
+            <div className="console-status"><i/>SYSTEMS ONLINE <span>FLN · BR</span></div>
+          </aside>
+        </div>
       </section>
 
       <section className="metrics" aria-label="Destaques profissionais">{t.metrics.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</section>
@@ -276,6 +281,12 @@ export default function Home() {
         <div className="capabilities"><h3>{t.capabilitiesTitle}</h3><div className="capability-grid">{t.capabilities.map(([number, title, body]) => <article key={number}><span>{number}</span><h4>{title}</h4><p>{body}</p></article>)}</div></div>
       </section>
 
+      <section className="section experience" id="experience">
+        <div className="section-heading"><p className="kicker">{t.experienceKicker}</p><h2>{t.experienceTitle}</h2></div>
+        <div className="timeline">{t.roles.map((role, index) => <article key={role.company}><div className="time-marker"><i className={index === 0 ? "current" : ""}/><span>{role.period}</span></div><div><p className="company">{role.company}</p><h3>{role.role}</h3><p>{role.text}</p></div></article>)}</div>
+        <div className="credentials"><div><h3>{t.educationTitle}</h3>{t.education.map(([degree, school]) => <article key={degree}><span>{degree}</span><p>{school}</p></article>)}</div><div><h3>{t.languagesTitle}</h3>{t.languages.map((item, index) => <article key={item}><span>0{index + 1}</span><p>{item}</p></article>)}</div></div>
+      </section>
+
       <section className="section work" id="work">
         <div className="section-heading work-heading"><p className="kicker">{t.workKicker}</p><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div>
         <div className="project-list">{t.featured.map((project) => <article className="project" key={project.number}>
@@ -283,12 +294,6 @@ export default function Home() {
           <div className="project-content"><div className={`project-type ${project.kind}`}>{project.kind === "public" ? t.public : t.confidential}</div><h3>{project.title}</h3><p>{project.description}</p><strong className="project-result"><span>↳</span>{project.result}</strong><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{"link" in project ? <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{t.repository}<span>↗</span></a> : <span className="private-note">◉ {t.privateNote}</span>}</div>
         </article>)}</div>
         <div className="more-projects"><h3>{t.moreTitle}</h3><div className="more-grid">{t.more.map(([title, body, stack, link]) => <a href={link} target="_blank" rel="noreferrer" key={title}><span className="more-arrow">↗</span><h4>{title}</h4><p>{body}</p><b>{stack}</b></a>)}</div></div>
-      </section>
-
-      <section className="section experience" id="experience">
-        <div className="section-heading"><p className="kicker">{t.experienceKicker}</p><h2>{t.experienceTitle}</h2></div>
-        <div className="timeline">{t.roles.map((role, index) => <article key={role.company}><div className="time-marker"><i className={index === 0 ? "current" : ""}/><span>{role.period}</span></div><div><p className="company">{role.company}</p><h3>{role.role}</h3><p>{role.text}</p></div></article>)}</div>
-        <div className="credentials"><div><h3>{t.educationTitle}</h3>{t.education.map(([degree, school]) => <article key={degree}><span>{degree}</span><p>{school}</p></article>)}</div><div><h3>{t.languagesTitle}</h3>{t.languages.map((item, index) => <article key={item}><span>0{index + 1}</span><p>{item}</p></article>)}</div></div>
       </section>
 
       <section className="contact" id="contact"><div className="contact-grid" aria-hidden="true"/><p className="kicker">{t.contactKicker}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="contact-actions"><a className="button light" href={profileLinks.email}>{t.emailMe}<span>↗</span></a><a className="text-link" href={profileLinks.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>↗</span></a><a className="text-link" href={profileLinks.github} target="_blank" rel="noreferrer">{t.github}<span>↗</span></a></div></section>
