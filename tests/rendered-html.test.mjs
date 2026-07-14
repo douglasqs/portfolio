@@ -19,6 +19,7 @@ test("exports a complete portfolio page", async () => {
   assert.match(html, /class="back-to-top"/);
   assert.match(html, /Remoto · disponível globalmente/);
   assert.doesNotMatch(html, /Florianópolis|FLN · BR/);
+  assert.doesNotMatch(html, /Aberto a novas oportunidades/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
 });

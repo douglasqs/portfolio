@@ -42,8 +42,6 @@ em { color: var(--blue-deep); font-family: Georgia, "Times New Roman", serif; fo
 .orb-one { width: 650px; height: 650px; right: -210px; top: 70px; background: radial-gradient(circle, rgba(0,171,228,.17), transparent 68%); }
 .orb-two { width: 420px; height: 420px; left: 28%; bottom: -280px; background: radial-gradient(circle, rgba(79,195,247,.09), transparent 70%); }
 .hero-content, .hero-console { position: relative; z-index: 2; }
-.status { display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border: 1px solid rgba(79,195,247,.28); border-radius: 999px; color: #bce5f7; background: rgba(0,171,228,.08); font-family: var(--font-mono), monospace; font-size: 13px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; }
-.status i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(79,195,247,.1); }
 .eyebrow, .kicker { margin: 32px 0 14px; color: var(--blue); font-family: var(--font-mono), monospace; font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .hero h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 6vw, 84px); font-weight: 720; line-height: .97; letter-spacing: -.055em; text-wrap: balance; }
 .hero h1 em { color: #fff; }

@@ -17,7 +17,6 @@ const content = {
   pt: {
     locale: "pt-BR",
     nav: { about: "Sobre", work: "Projetos", experience: "Experiência", contact: "Contato" },
-    availability: "Aberto a novas oportunidades",
     eyebrow: "Full-stack · IA · Integrações",
     heroTitle: <>Conecto <em>ideias, dados e o mundo real.</em></>,
     heroBody: "Desenvolvedor full-stack e especialista em integrações, com experiência em IA, computer vision, APIs, redes e sistemas de segurança eletrônica.",
@@ -125,7 +124,6 @@ const content = {
   en: {
     locale: "en",
     nav: { about: "About", work: "Projects", experience: "Experience", contact: "Contact" },
-    availability: "Open to new opportunities",
     eyebrow: "Full-stack · AI · Integrations",
     heroTitle: <>I connect <em>ideas, data and the real world.</em></>,
     heroBody: "Full-stack developer and integration specialist with experience in AI, computer vision, APIs, networking and electronic security systems.",
@@ -169,7 +167,6 @@ const content = {
   es: {
     locale: "es",
     nav: { about: "Sobre mí", work: "Proyectos", experience: "Experiencia", contact: "Contacto" },
-    availability: "Abierto a nuevas oportunidades",
     eyebrow: "Full-stack · IA · Integraciones",
     heroTitle: <>Conecto <em>ideas, datos y el mundo real.</em></>,
     heroBody: "Desarrollador full-stack y especialista en integraciones, con experiencia en IA, visión artificial, APIs, redes y sistemas de seguridad electrónica.",
@@ -249,7 +246,6 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
         <div className="hero-content" id="content">
-          <div className="status"><i />{t.availability}</div>
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.heroTitle}</h1>
           <p className="hero-body">{t.heroBody}</p>
