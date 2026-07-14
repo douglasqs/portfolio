@@ -20,6 +20,7 @@ test("exports a complete portfolio page", async () => {
   assert.match(html, /Remoto · disponível globalmente/);
   assert.doesNotMatch(html, /Florianópolis|FLN · BR/);
   assert.doesNotMatch(html, /Aberto a novas oportunidades/);
+  assert.match(html, /class="button secondary" href="#contact">Vamos conversar/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
 });
@@ -32,8 +33,10 @@ test("includes share and crawler assets", async () => {
   ]);
 });
 
-test("keeps the mobile introduction before the profile photo", async () => {
+test("uses the requested mobile content order", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  assert.match(css, /\.hero-content \{ order: 1; \}/);
-  assert.match(css, /\.hero-side \{ order: 2;/);
+  assert.match(css, /\.profile-photo\{order:1;/);
+  assert.match(css, /\.hero-content\{order:2\}/);
+  assert.match(css, /\.project-content h3\{order:1;/);
+  assert.match(css, /\.project-type\{order:3;/);
 });

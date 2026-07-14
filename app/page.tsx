@@ -249,7 +249,7 @@ export default function Home() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.heroTitle}</h1>
           <p className="hero-body">{t.heroBody}</p>
-          <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.email}>{t.talk}<span>↗</span></a></div>
+          <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href="#contact">{t.talk}<span>↓</span></a></div>
           <div className="hero-foot"><span className="world-mark" aria-hidden="true">🌐</span><span>{t.remoteAvailability}</span></div>
         </div>
         <div className="hero-side">
