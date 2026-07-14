@@ -21,6 +21,8 @@ test("exports a complete portfolio page", async () => {
   assert.doesNotMatch(html, /Florianópolis|FLN · BR/);
   assert.doesNotMatch(html, /Aberto a novas oportunidades/);
   assert.match(html, /class="button secondary" href="#contact">Vamos conversar/);
+  assert.match(html, /href="curriculo-douglas-soares\.pdf"/);
+  assert.match(html, /download="Douglas-Soares-Curriculo\.pdf"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
 });
@@ -30,6 +32,7 @@ test("includes share and crawler assets", async () => {
     access(new URL("../dist/client/og-techblue.png", import.meta.url)),
     access(new URL("../dist/client/robots.txt", import.meta.url)),
     access(new URL("../dist/client/sitemap.xml", import.meta.url)),
+    access(new URL("../dist/client/curriculo-douglas-soares.pdf", import.meta.url)),
   ]);
 });
 

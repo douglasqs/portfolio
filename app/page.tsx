@@ -10,6 +10,7 @@ const profileLinks = {
   github: "https://github.com/douglasqs",
   linkedin: "https://www.linkedin.com/in/douglasqs/",
   whatsapp: "https://wa.me/5548996940124",
+  resume: "curriculo-douglas-soares.pdf",
   email: "mailto:douglasqsoares@hotmail.com",
 };
 
@@ -21,6 +22,7 @@ const content = {
     heroTitle: <>Conecto <em>ideias, dados e o mundo real.</em></>,
     heroBody: "Desenvolvedor full-stack e especialista em integrações, com experiência em IA, computer vision, APIs, redes e sistemas de segurança eletrônica.",
     seeWork: "Ver projetos",
+    downloadResume: "Baixar currículo",
     talk: "Vamos conversar",
     remoteAvailability: "Remoto · disponível globalmente",
     metrics: [
@@ -128,6 +130,7 @@ const content = {
     heroTitle: <>I connect <em>ideas, data and the real world.</em></>,
     heroBody: "Full-stack developer and integration specialist with experience in AI, computer vision, APIs, networking and electronic security systems.",
     seeWork: "View projects",
+    downloadResume: "Download résumé",
     talk: "Let’s talk",
     remoteAvailability: "Remote · available worldwide",
     metrics: [["+25%", "facial recognition accuracy"], ["9+", "years in technology and support"], ["3", "languages for collaboration"]],
@@ -170,7 +173,7 @@ const content = {
     eyebrow: "Full-stack · IA · Integraciones",
     heroTitle: <>Conecto <em>ideas, datos y el mundo real.</em></>,
     heroBody: "Desarrollador full-stack y especialista en integraciones, con experiencia en IA, visión artificial, APIs, redes y sistemas de seguridad electrónica.",
-    seeWork: "Ver proyectos", talk: "Hablemos", remoteAvailability: "Remoto · disponible globalmente",
+    seeWork: "Ver proyectos", downloadResume: "Descargar CV", talk: "Hablemos", remoteAvailability: "Remoto · disponible globalmente",
     metrics: [["+25%", "de precisión en reconocimiento facial"], ["9+", "años en tecnología y soporte"], ["3", "idiomas para colaborar"]],
     aboutKicker: "Sobre mí",
     aboutTitle: <>Convierto la complejidad técnica en <em>soluciones que funcionan.</em></>,
@@ -249,7 +252,7 @@ export default function Home() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.heroTitle}</h1>
           <p className="hero-body">{t.heroBody}</p>
-          <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href="#contact">{t.talk}<span>↓</span></a></div>
+          <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.resume} download="Douglas-Soares-Curriculo.pdf">{t.downloadResume}<span>↓</span></a><a className="button secondary" href="#contact">{t.talk}<span>↓</span></a></div>
           <div className="hero-foot"><span className="world-mark" aria-hidden="true">🌐</span><span>{t.remoteAvailability}</span></div>
         </div>
         <div className="hero-side">
