@@ -9,6 +9,9 @@ test("exports a complete portfolio page", async () => {
   assert.match(html, /Secure Face/);
   assert.doesNotMatch(html, /Intelbras Secure Face/);
   assert.match(html, /images\/secure-face-interface\.png/);
+  assert.match(html, /Servidor de eventos - multimo/);
+  assert.match(html, /images\/multimo-events\.png/);
+  assert.match(html, /images\/multimo-settings\.png/);
   assert.match(html, /Case confidencial/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
