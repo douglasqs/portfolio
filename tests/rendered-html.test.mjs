@@ -6,7 +6,9 @@ test("exports a complete portfolio page", async () => {
   const html = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
   assert.match(html, /Douglas Soares/);
   assert.match(html, /Conecto/);
-  assert.match(html, /Intelbras Secure Face/);
+  assert.match(html, /Secure Face/);
+  assert.doesNotMatch(html, /Intelbras Secure Face/);
+  assert.match(html, /images\/secure-face-interface\.png/);
   assert.match(html, /Case confidencial/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
