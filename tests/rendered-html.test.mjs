@@ -14,6 +14,7 @@ test("exports a complete portfolio page", async () => {
   assert.match(html, /images\/multimo-settings\.png/);
   assert.match(html, /Case confidencial/);
   assert.doesNotMatch(html, /Outros projetos públicos|Access Control Server|Catálogo PHP MVC|My Money/);
+  assert.doesNotMatch(html, /Komlog|2016 — 2017/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
 });
