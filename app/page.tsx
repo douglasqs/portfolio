@@ -86,12 +86,6 @@ const content = {
         link: "https://github.com/douglasqs/SERVIDOR-LPR",
       },
     ],
-    moreTitle: "Outros projetos públicos",
-    more: [
-      ["Access Control Server", "Servidor Spring Boot para eventos e comandos em controladores Dahua, com Digest Auth e testes de carga.", "Java · Spring Boot · Thymeleaf", "https://github.com/douglasqs/access-control-server"],
-      ["Catálogo PHP MVC", "Modernização de uma aplicação legada para arquitetura MVC, autenticação segura e persistência SQLite.", "PHP · MVC · SQLite", "https://github.com/douglasqs/projeto-aplicado-iv"],
-      ["My Money", "Aplicativo mobile de finanças pessoais com autenticação, cadastro e histórico de despesas.", "Flutter · Dart · REST", "https://github.com/douglasqs/app-my.money"],
-    ],
     experienceKicker: "Trajetória",
     experienceTitle: <>Experiência que combina <em>código, produto e campo.</em></>,
     present: "atual",
@@ -161,8 +155,6 @@ const content = {
       { kind: "confidential", visual: "license", number: "03", title: "Licensing, customer and operations platform", description: "Web solution to validate installations and manage licenses, customers and payments, with secure authentication, audit trails and renewal flows. Designed to run across different hosting environments.", result: "Centralized management and secure API validation", tags: ["Node.js", "Express", "Prisma", "MySQL", "JWT"] },
       { kind: "public", visual: "lpr", number: "04", title: "Event server - multimo", description: "Diagnostic tool that receives multipart events from cameras and controllers, normalizes facial and license-plate data, stores evidence and tests responses and remote commands in real time.", result: "Faster field integration diagnostics", tags: ["Python", "Flask", "ISAPI", "ANPR", "HTTP"], link: "https://github.com/douglasqs/SERVIDOR-LPR" },
     ],
-    moreTitle: "More public projects",
-    more: [["Access Control Server", "Spring Boot server for Dahua controller events and commands, with Digest Auth and stress tests.", "Java · Spring Boot · Thymeleaf", "https://github.com/douglasqs/access-control-server"], ["PHP MVC Catalog", "Modernization of a legacy app with MVC architecture, secure authentication and SQLite persistence.", "PHP · MVC · SQLite", "https://github.com/douglasqs/projeto-aplicado-iv"], ["My Money", "Personal finance mobile app with authentication, expense entry and history.", "Flutter · Dart · REST", "https://github.com/douglasqs/app-my.money"]],
     experienceKicker: "Career",
     experienceTitle: <>Experience that combines <em>code, product and fieldwork.</em></>,
     present: "present",
@@ -202,8 +194,6 @@ const content = {
       { kind: "confidential", visual: "license", number: "03", title: "Plataforma de licencias, clientes y operaciones", description: "Solución web para validar instalaciones y administrar licencias, clientes y pagos, con autenticación segura, auditoría y flujos de renovación. Diseñada para operar en distintos entornos de hosting.", result: "Gestión centralizada y validación segura por API", tags: ["Node.js", "Express", "Prisma", "MySQL", "JWT"] },
       { kind: "public", visual: "lpr", number: "04", title: "Servidor de eventos - multimo", description: "Herramienta de diagnóstico que recibe eventos multipart de cámaras y controladores, normaliza datos faciales y de matrículas, guarda evidencias y prueba respuestas y comandos remotos en tiempo real.", result: "Diagnóstico rápido de integraciones en campo", tags: ["Python", "Flask", "ISAPI", "ANPR", "HTTP"], link: "https://github.com/douglasqs/SERVIDOR-LPR" },
     ],
-    moreTitle: "Otros proyectos públicos",
-    more: [["Access Control Server", "Servidor Spring Boot para eventos y comandos en controladores Dahua, con Digest Auth y pruebas de carga.", "Java · Spring Boot · Thymeleaf", "https://github.com/douglasqs/access-control-server"], ["Catálogo PHP MVC", "Modernización de una aplicación legacy con arquitectura MVC, autenticación segura y persistencia SQLite.", "PHP · MVC · SQLite", "https://github.com/douglasqs/projeto-aplicado-iv"], ["My Money", "Aplicación móvil de finanzas personales con autenticación, registro e historial de gastos.", "Flutter · Dart · REST", "https://github.com/douglasqs/app-my.money"]],
     experienceKicker: "Trayectoria",
     experienceTitle: <>Experiencia que combina <em>código, producto y campo.</em></>,
     present: "actual",
@@ -293,7 +283,6 @@ export default function Home() {
           <div className="project-media"><ProjectVisual type={project.visual}/><span className="project-number">{project.number}</span></div>
           <div className="project-content"><div className={`project-type ${project.kind}`}>{project.kind === "public" ? t.public : t.confidential}</div><h3>{project.title}</h3><p>{project.description}</p><strong className="project-result"><span>↳</span>{project.result}</strong><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{"link" in project ? <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{t.repository}<span>↗</span></a> : <span className="private-note">◉ {t.privateNote}</span>}</div>
         </article>)}</div>
-        <div className="more-projects"><h3>{t.moreTitle}</h3><div className="more-grid">{t.more.map(([title, body, stack, link]) => <a href={link} target="_blank" rel="noreferrer" key={title}><span className="more-arrow">↗</span><h4>{title}</h4><p>{body}</p><b>{stack}</b></a>)}</div></div>
       </section>
 
       <section className="contact" id="contact"><div className="contact-grid" aria-hidden="true"/><p className="kicker">{t.contactKicker}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="contact-actions"><a className="button light" href={profileLinks.email}>{t.emailMe}<span>↗</span></a><a className="text-link" href={profileLinks.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>↗</span></a><a className="text-link" href={profileLinks.github} target="_blank" rel="noreferrer">{t.github}<span>↗</span></a></div></section>
