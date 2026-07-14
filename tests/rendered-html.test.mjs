@@ -17,6 +17,8 @@ test("exports a complete portfolio page", async () => {
   assert.doesNotMatch(html, /Komlog|2016 — 2017/);
   assert.match(html, /https:\/\/wa\.me\/5548996940124/);
   assert.match(html, /class="back-to-top"/);
+  assert.match(html, /Remoto · disponível globalmente/);
+  assert.doesNotMatch(html, /Florianópolis|FLN · BR/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
   assert.ok(html.indexOf("Trajetória") < html.indexOf("Trabalhos selecionados"));
 });

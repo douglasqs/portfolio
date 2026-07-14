@@ -23,7 +23,7 @@ const content = {
     heroBody: "Desenvolvedor full-stack e especialista em integrações, com experiência em IA, computer vision, APIs, redes e sistemas de segurança eletrônica.",
     seeWork: "Ver projetos",
     talk: "Vamos conversar",
-    location: "Florianópolis, Brasil",
+    remoteAvailability: "Remoto · disponível globalmente",
     metrics: [
       ["+25%", "de precisão em reconhecimento facial"],
       ["9+", "anos em tecnologia e suporte"],
@@ -131,7 +131,7 @@ const content = {
     heroBody: "Full-stack developer and integration specialist with experience in AI, computer vision, APIs, networking and electronic security systems.",
     seeWork: "View projects",
     talk: "Let’s talk",
-    location: "Florianópolis, Brazil",
+    remoteAvailability: "Remote · available worldwide",
     metrics: [["+25%", "facial recognition accuracy"], ["9+", "years in technology and support"], ["3", "languages for collaboration"]],
     aboutKicker: "About me",
     aboutTitle: <>I turn technical complexity into <em>solutions that work.</em></>,
@@ -173,7 +173,7 @@ const content = {
     eyebrow: "Full-stack · IA · Integraciones",
     heroTitle: <>Conecto <em>ideas, datos y el mundo real.</em></>,
     heroBody: "Desarrollador full-stack y especialista en integraciones, con experiencia en IA, visión artificial, APIs, redes y sistemas de seguridad electrónica.",
-    seeWork: "Ver proyectos", talk: "Hablemos", location: "Florianópolis, Brasil",
+    seeWork: "Ver proyectos", talk: "Hablemos", remoteAvailability: "Remoto · disponible globalmente",
     metrics: [["+25%", "de precisión en reconocimiento facial"], ["9+", "años en tecnología y soporte"], ["3", "idiomas para colaborar"]],
     aboutKicker: "Sobre mí",
     aboutTitle: <>Convierto la complejidad técnica en <em>soluciones que funcionan.</em></>,
@@ -254,14 +254,14 @@ export default function Home() {
           <h1>{t.heroTitle}</h1>
           <p className="hero-body">{t.heroBody}</p>
           <div className="hero-actions"><a className="button primary" href="#work">{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.email}>{t.talk}<span>↗</span></a></div>
-          <div className="hero-foot"><span>{t.location}</span><span className="foot-line"/><a href={profileLinks.github} target="_blank" rel="noreferrer">github.com/douglasqs ↗</a></div>
+          <div className="hero-foot"><span className="world-mark" aria-hidden="true">🌐</span><span>{t.remoteAvailability}</span></div>
         </div>
         <div className="hero-side">
           <div className="profile-photo"><span className="photo-ring" aria-hidden="true"/><img src="images/douglas-soares.jpeg" alt="Douglas Soares" fetchPriority="high" /></div>
           <aside className="hero-console" aria-label="Resumo técnico">
             <div className="console-bar"><span/><span/><span/><b>douglas.profile</b></div>
             <div className="console-body"><p><i>01</i><span className="code-blue">const</span> developer = {'{'}</p><p><i>02</i>&nbsp;&nbsp;focus: <span className="code-green">&quot;real-world systems&quot;</span>,</p><p><i>03</i>&nbsp;&nbsp;stack: [<span className="code-green">&quot;software&quot;</span>, <span className="code-green">&quot;AI&quot;</span>],</p><p><i>04</i>&nbsp;&nbsp;connects: [<span className="code-green">&quot;APIs&quot;</span>, <span className="code-green">&quot;hardware&quot;</span>],</p><p><i>05</i>&nbsp;&nbsp;mindset: <span className="code-green">&quot;solve → validate → improve&quot;</span></p><p><i>06</i>{'}'};</p></div>
-            <div className="console-status"><i/>SYSTEMS ONLINE <span>FLN · BR</span></div>
+            <div className="console-status"><i/>SYSTEMS ONLINE <span>GLOBAL · REMOTE</span></div>
           </aside>
         </div>
       </section>
