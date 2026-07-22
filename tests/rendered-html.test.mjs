@@ -43,7 +43,8 @@ test("uses the requested mobile content order", async () => {
   assert.match(css, /\.profile-photo\{grid-area:photo;width:88px;/);
   assert.match(css, /\.project-content h3\{order:1;/);
   assert.match(css, /\.project-type\{order:3;/);
-  assert.match(css, /\.button > span \{ position: absolute;/);
+  assert.match(css, /\.button > span \{ flex: 0 0 auto;/);
+  assert.match(css, /\.button>span\{position:absolute;right:17px\}/);
 });
 
 test("internal navigation avoids blocking hash animations", async () => {
