@@ -38,10 +38,12 @@ test("includes share and crawler assets", async () => {
 
 test("uses the requested mobile content order", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  assert.match(css, /\.profile-photo\{order:1;/);
-  assert.match(css, /\.hero-content\{order:2\}/);
+  assert.match(css, /grid-template-areas:"photo heading"/);
+  assert.match(css, /\.hero-heading\{grid-area:heading;/);
+  assert.match(css, /\.profile-photo\{grid-area:photo;width:88px;/);
   assert.match(css, /\.project-content h3\{order:1;/);
   assert.match(css, /\.project-type\{order:3;/);
+  assert.match(css, /\.button > span \{ position: absolute;/);
 });
 
 test("internal navigation avoids blocking hash animations", async () => {

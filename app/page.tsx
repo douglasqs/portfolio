@@ -253,9 +253,8 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
-        <div className="hero-content" id="content">
-          <p className="eyebrow">{t.eyebrow}</p>
-          <h1>{t.heroTitle}</h1>
+        <div className="hero-content">
+          <div className="hero-heading" id="content"><p className="eyebrow">{t.eyebrow}</p><h1>{t.heroTitle}</h1></div>
           <p className="hero-body">{t.heroBody}</p>
           <div className="hero-actions"><a className="button primary" href="#work" onClick={(event) => { event.preventDefault(); navigateToSection("work"); }}>{t.seeWork}<span>↓</span></a><a className="button secondary" href={profileLinks.resume} download="Douglas-Soares-Curriculo.pdf">{t.downloadResume}<span>↓</span></a><a className="button secondary" href="#contact" onClick={(event) => { event.preventDefault(); navigateToSection("contact"); }}>{t.talk}<span>↓</span></a></div>
           <div className="hero-foot"><span className="world-mark" aria-hidden="true">🌐</span><span>{t.remoteAvailability}</span></div>
